@@ -9,6 +9,6 @@ package Proj2;
  *
  * @author Owner
  */
-public class NewClass1 {
-    SDASDSA
+public class NewClass2 {
+    
 }
