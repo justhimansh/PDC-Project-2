@@ -9,5 +9,6 @@ package Proj2;
  * @author sukhm
  */
 public class NewClass3 {
+    int age;
     
 }
