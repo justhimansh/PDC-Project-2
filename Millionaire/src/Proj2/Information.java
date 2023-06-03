@@ -1,42 +1,43 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Proj2;
 
-import java.sql.*;
-import java.util.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-public class NewClass3 {
+/**
+ *
+ * @author Owner
+ */
+public class Information {
+    
     private static final String DB_URL = "jdbc:derby://localhost:1527/Questions and Answers";
     private static final String DB_USER = "pdc";
     private static final String DB_PASSWORD = "pdc";
-
-    public static void main(String[] args) {
-        // Retrieve the data for all categories
+    public static String maths = "";
+    
+    public static void Retrieve(){
+        
+        
         String mathsData = retrieveCategoryData("Maths");
         String scienceData = retrieveCategoryData("Science");
         String popCultureData = retrieveCategoryData("Pop Culture");
         String geographyData = retrieveCategoryData("Geography");
         String sportsData = retrieveCategoryData("Sports");
+        
+        maths = mathsData;
 
-        // Test the retrieval of data for the "Maths" category
-        System.out.println("Maths Data:");
-        System.out.println(mathsData);
+    
+        Maths.testing();
 
-        // Test the retrieval of data for the "Science" category
-        System.out.println("Science Data:");
-        //System.out.println(scienceData);
-
-        // Test the retrieval of data for the "Pop Culture" category
-        System.out.println("Pop Culture Data:");
-        //System.out.println(popCultureData);
-
-        // Test the retrieval of data for the "Geography" category
-        System.out.println("Geography Data:");
-        //System.out.println(geographyData);
-
-        // Test the retrieval of data for the "Sports" category
-        System.out.println("Sports Data:");
-        //System.out.println(sportsData);
     }
-
+    
     private static String retrieveCategoryData(String category) {
         StringBuilder sb = new StringBuilder();
 
@@ -64,7 +65,6 @@ public class NewClass3 {
                 sb.append("Answer: ").append(ans).append("\n");
                 sb.append("\n");
             }
-
             rs.close();
             stmt.close();
         } catch (SQLException ex) {

@@ -9,6 +9,8 @@ package Proj2;
  *
  * @author Owner
  */
-public class NewClass2 {
-    
+public class nextInfo {
+    public static void nextInfo(){
+        Information.Retrieve();
+    }
 }
