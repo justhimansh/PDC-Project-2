@@ -4,30 +4,27 @@
  * and open the template in the editor.
  */
 package Proj2;
-import static Proj2.randomQuestion.getQ;
+
+
 import java.util.HashMap;
-import java.util.ArrayList;
 import java.util.Map;
-import java.util.Scanner;
-import java.util.*;
+import java.util.Random;
 
 /**
  *
  * @author Owner
- * 
  */
-public class Maths extends Information{
-    public static String mathsData = Information.maths;
+public class Science {
+    public static String scienceData = Information.science;
     public static String ID = null;
     public static String questionText = null;
     public static Map<String, String> PA = null;
     public static String actualAnswer = null;
     
-    
     public static void getQuestion(String QuestionID){
         //System.out.println(mathsData);
         
-        Map<String, Question> questionStore = parseQuestions(mathsData);
+        Map<String, Question> questionStore = parseQuestions(scienceData);
         
         String[] questionIDList = {"q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10"};
         Random random = new Random();
@@ -124,5 +121,4 @@ public class Maths extends Information{
             return answer;
         }
     }
-    
 }

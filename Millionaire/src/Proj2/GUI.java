@@ -5,21 +5,49 @@
  */
 package Proj2;
 
-import static Proj2.Maths.questionStore;
 import java.awt.Color;
 import java.util.Random;
+import java.util.*;
+import java.util.ArrayList;
+import javax.swing.SwingUtilities;
+
 
 /**
  *
  * @author Owner
  */
 public class GUI extends javax.swing.JFrame {
-
+    ArrayList<String> answered = new ArrayList<>();
     /**
      * Creates new form GUI
      */
     public GUI() {
         initComponents();
+    }
+    
+    public void Display(){
+        Information.Retrieve();
+        String saveRNG = RNG.getRandomNumber();
+        
+        Science.getQuestion(saveRNG);
+        answered.add(saveRNG);
+        System.out.println(Science.ID);
+        System.out.println(Science.questionText);
+        System.out.println(Science.PA);
+        System.out.println(Science.actualAnswer);
+        
+        jTextPane1.setText(Science.questionText);
+      
+        jTextField2.setBackground(Color.WHITE);
+        jTextField3.setBackground(Color.WHITE);
+        jTextField4.setBackground(Color.WHITE);
+        jTextField5.setBackground(Color.WHITE);
+        
+        jTextField2.setText(Science.PA.get("A1"));
+        jTextField3.setText(Science.PA.get("A2"));
+        jTextField4.setText(Science.PA.get("A3"));
+        jTextField5.setText(Science.PA.get("A4"));
+        
     }
 
     /**
@@ -44,7 +72,8 @@ public class GUI extends javax.swing.JFrame {
         jTextPane1 = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1200, 850));
+        setForeground(java.awt.Color.white);
+        setPreferredSize(new java.awt.Dimension(1200, 900));
         addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 formMouseMoved(evt);
@@ -72,10 +101,25 @@ public class GUI extends javax.swing.JFrame {
         });
 
         jTextField3.setEditable(false);
+        jTextField3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField3MouseClicked(evt);
+            }
+        });
 
         jTextField4.setEditable(false);
+        jTextField4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField4MouseClicked(evt);
+            }
+        });
 
         jTextField5.setEditable(false);
+        jTextField5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField5MouseClicked(evt);
+            }
+        });
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proj2/images/logo-10.png"))); // NOI18N
         jButton1.setBorderPainted(false);
@@ -165,73 +209,57 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseMoved
-        this.getContentPane().setBackground(Color.DARK_GRAY);
+        Information.Retrieve();
     }//GEN-LAST:event_formMouseMoved
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-
-        Information.Retrieve();
-        jTextPane1.setText(Maths.testing());
-        jTextField2.setText(Maths.getAnswer5());
-        jTextField3.setText(Maths.getAnswer2());
-        jTextField4.setText(Maths.getAnswer3());
-        jTextField5.setText(Maths.getAnswer4());
-      
-        
+        Information.Retrieve(); Display();
     }//GEN-LAST:event_formWindowActivated
 
     private void jButton1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jButton1FocusGained
-        Information.Retrieve();
+        
     }//GEN-LAST:event_jButton1FocusGained
 
     private void jTextField2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField2MouseClicked
-        Information.Retrieve();
-        
-        if(Maths.getAnswer5() == Maths.getAnswer5()){
-           jTextField2.setBackground(Color.green);
-           jTextPane1.setText(Maths.testing3);
-           
-           String[] qs = {"q1", "q2", "q3"};
-            Random random = new Random();
-            int randomIndex = random.nextInt(qs.length);
-           
-           for(int i = 0; i < 3; i++){
-               
-                Maths.Question question = questionStore.get(qs[randomIndex]);
-             if (question != null) {
-                 System.out.println("Question ID: " + qs[randomIndex]);
-                 jTextPane1.setText(question.getQuestionText());
-                 System.out.println("Question: " + question.getQuestionText());
-                 System.out.println("Possible Answers: " + question.getPossibleAnswers());
-                 System.out.println("Correct Answer: " + question.getAnswer());
-             } else {
-                 System.out.println("Question not found for ID: " + qs[randomIndex]);
-             }
-             
-             
-           
-           }
-           
-           
-           
-
-           
-
-           
-        } else {
-            jTextField2.setBackground(Color.red);
-            jTextPane1.setText(Maths.testing3);
-            //System.exit(0);
-        }
-        
-        
+        if (Science.PA.get("A1").equals(Science.getActualAnswer())) {
+        jTextField2.setBackground(Color.GREEN);
+        Display();
+    } else {
+        jTextField2.setBackground(Color.RED);
+    }
     }//GEN-LAST:event_jTextField2MouseClicked
+
+    private void jTextField3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField3MouseClicked
+        if(Science.PA.get("A2").equals(Science.getActualAnswer())){
+            jTextField3.setBackground(Color.GREEN);
+            Display();
+        } else {
+            jTextField3.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_jTextField3MouseClicked
+
+    private void jTextField4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField4MouseClicked
+        if(Science.PA.get("A3").equals(Science.getActualAnswer())){
+            jTextField4.setBackground(Color.GREEN);
+            Display();
+        } else {
+            jTextField4.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_jTextField4MouseClicked
+
+    private void jTextField5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField5MouseClicked
+        if(Science.PA.get("A4").equals(Science.getActualAnswer())){
+            jTextField5.setBackground(Color.GREEN);
+            Display();
+        } else {
+            jTextField5.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_jTextField5MouseClicked
 
     /**
      * @param args the command line arguments
      */
    
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

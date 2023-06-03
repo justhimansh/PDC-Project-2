@@ -21,6 +21,7 @@ public class Information {
     private static final String DB_USER = "pdc";
     private static final String DB_PASSWORD = "pdc";
     public static String maths = "";
+    public static String science = "";
     
     public static void Retrieve(){
         
@@ -32,9 +33,11 @@ public class Information {
         String sportsData = retrieveCategoryData("Sports");
         
         maths = mathsData;
+        science = scienceData;
+        
+        //System.out.println(science);
 
-    
-        Maths.testing();
+        //Maths.getQuestion();
 
     }
     
