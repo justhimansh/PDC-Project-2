@@ -17,7 +17,7 @@ import java.util.*;
  * 
  */
 public class Maths extends Information{
-    public static String mathsData = Information.maths;
+    public static String mathsData = GameDatabase.maths;
     public static String ID = null;
     public static String questionText = null;
     public static Map<String, String> PA = null;

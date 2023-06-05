@@ -10,13 +10,13 @@ public class Main {
         // Retrieve the data for all categories
         
         /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                StartScreen playGame = new StartScreen();
-//                playGame.setVisible(true);
-//                
-//            }
-//        });
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                StartScreen playGame = new StartScreen();
+                playGame.setVisible(true);
+                
+            }
+        });
 
         //gives question
         
@@ -32,7 +32,9 @@ public class Main {
 //            System.out.println(Database.getURL());
 //            System.out.println(Database.getUSERNAME());
             gdb.Retrieve();
+           
             
+            System.out.println(gdb.science);
             //gdb.retrieveGameInfo();
            
         } catch (SQLException e){

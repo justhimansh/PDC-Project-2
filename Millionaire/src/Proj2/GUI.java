@@ -26,7 +26,7 @@ public class GUI extends javax.swing.JFrame {
     }
     
     public void Display(){
-        Information.Retrieve();
+        GameDatabase.Retrieve();
         String saveRNG = RNG.getRandomNumber();
         
         Science.getQuestion(saveRNG);
@@ -209,11 +209,11 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseMoved
-        Information.Retrieve();
+        GameDatabase.Retrieve();
     }//GEN-LAST:event_formMouseMoved
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-        Information.Retrieve(); Display();
+        GameDatabase.Retrieve(); Display();
     }//GEN-LAST:event_formWindowActivated
 
     private void jButton1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jButton1FocusGained

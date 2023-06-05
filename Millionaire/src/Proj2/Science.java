@@ -15,7 +15,7 @@ import java.util.Random;
  * @author Owner
  */
 public class Science {
-    public static String scienceData = Information.science;
+    public static String scienceData = GameDatabase.science;
     public static String ID = null;
     public static String questionText = null;
     public static Map<String, String> PA = null;

@@ -5,8 +5,6 @@
  */
 package Proj2;
 
-import static Proj2.Information.maths;
-import static Proj2.Information.science;
 import java.sql.*;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -168,10 +166,7 @@ public class GameDatabase {
         maths = mathsData;
         science = scienceData;
         
-        System.out.println(mathsData);
-        
-        
-               
+       
 
     }
     
