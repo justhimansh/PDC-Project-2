@@ -45,7 +45,7 @@ public class Information {
         StringBuilder sb = new StringBuilder();
 
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
-            String sqlQuery = "SELECT * FROM PDC.QUIZ WHERE CATEGORY = ?";
+            String sqlQuery = "SELECT * FROM PDC.NEWQUIZ WHERE CATEGORY = ?";
             PreparedStatement stmt = conn.prepareStatement(sqlQuery);
             stmt.setString(1, category);
             ResultSet rs = stmt.executeQuery();

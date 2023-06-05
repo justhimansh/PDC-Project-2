@@ -31,7 +31,6 @@ public class StartScreen extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(102, 255, 102));
         setPreferredSize(new java.awt.Dimension(1200, 850));
         setResizable(false);
         java.awt.GridBagLayout layout = new java.awt.GridBagLayout();
