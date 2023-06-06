@@ -22,6 +22,11 @@ public class GameDatabase {
     public static Statement statement;
     public static String maths = "";
     public static String science = "";
+    public static String sports = "";
+    public static String geography = "";
+    public static String popCulture= "";
+    public static String history= "";
+    
     
     public GameDatabase() throws SQLException {
         database = new Database();
@@ -162,12 +167,15 @@ public class GameDatabase {
         String popCultureData = retrieveCategoryData("Pop Culture");
         String geographyData = retrieveCategoryData("Geography");
         String sportsData = retrieveCategoryData("Sports");
+        String historyData = retrieveCategoryData("History");
         
         maths = mathsData;
         science = scienceData;
-        
+        popCulture = popCultureData;
+        geography = geographyData;
+        sports = sportsData;
+        history = historyData;
        
-
     }
     
     public static String retrieveCategoryData(String category) {

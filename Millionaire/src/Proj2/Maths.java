@@ -16,13 +16,12 @@ import java.util.*;
  * @author Owner
  * 
  */
-public class Maths extends Information{
+public class Maths {
     public static String mathsData = GameDatabase.maths;
     public static String ID = null;
     public static String questionText = null;
     public static Map<String, String> PA = null;
     public static String actualAnswer = null;
-    
     
     public static void getQuestion(String QuestionID){
         //System.out.println(mathsData);
@@ -124,5 +123,4 @@ public class Maths extends Information{
             return answer;
         }
     }
-    
 }
