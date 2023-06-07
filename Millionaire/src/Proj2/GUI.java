@@ -19,6 +19,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import java.awt.BorderLayout;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  *
@@ -31,9 +34,12 @@ public class GUI extends javax.swing.JFrame {
     JDialog dialog = new JDialog((JFrame) SwingUtilities.getWindowAncestor(this), "Reveal", true);
     JDialog dialog2 = new JDialog((JFrame) SwingUtilities.getWindowAncestor(this), "Phone", true);
     JDialog dialog3 = new JDialog((JFrame) SwingUtilities.getWindowAncestor(this), "50/50", true);
+    JDialog dialog4 = new JDialog((JFrame) SwingUtilities.getWindowAncestor(this), "Winner!!!", true);
+    static String username="";
     boolean reveal = false;
     boolean phone = false;
     boolean fiftyfifty = false;
+    static int points = 0;
     //String saveRNG = RNG.getRandomNumber();
     /**
      * Creates new form GUI
@@ -68,6 +74,16 @@ public class GUI extends javax.swing.JFrame {
         jLabel6.setVisible(false);
         jLabel8.setVisible(false);
         jLabel7.setVisible(false);
+        jLabel9.setVisible(false);
+        jLabel10.setVisible(false);
+        jLabel18.setVisible(false);
+        jLabel17.setVisible(false);
+        jLabel16.setVisible(false);
+        jLabel15.setVisible(false);
+        jLabel14.setVisible(false);
+        jLabel13.setVisible(false);
+        jLabel12.setVisible(false);
+        jLabel11.setVisible(false);
         
             jButton2.setText(categories[0]);
             jButton3.setText(categories[1]);
@@ -75,7 +91,6 @@ public class GUI extends javax.swing.JFrame {
             jButton5.setText(categories[3]);
             jButton6.setText(categories[4]);
             jButton7.setText(categories[5]);
-        
     }
     
     private void showComponents(){
@@ -99,6 +114,89 @@ public class GUI extends javax.swing.JFrame {
         jLabel6.setVisible(false);
         jLabel8.setVisible(false);
         jLabel7.setVisible(false);
+        jLabel9.setVisible(false);
+        jLabel10.setVisible(false);
+        jLabel18.setVisible(false);
+        jLabel17.setVisible(false);
+        jLabel16.setVisible(false);
+        jLabel15.setVisible(false);
+        jLabel14.setVisible(false);
+        jLabel13.setVisible(false);
+        jLabel12.setVisible(false);
+        jLabel11.setVisible(false);
+        
+    }
+    
+    public void checkPoints(){
+        if(points > 1){
+            System.out.println(points);
+            jLabel9.setVisible(true);
+        jLabel9.setOpaque(true);
+        jLabel9.setBackground(new Color(0, 255, 0, 128)); // Set the alpha value to 128 for slight transparency
+        jLabel9.setForeground(new Color(jLabel9.getForeground().getRed(), jLabel9.getForeground().getGreen(), jLabel9.getForeground().getBlue(), 128)); // Set the alpha value to 128 for slight transparency
+            
+            System.out.println(points);
+        } 
+        if(points > 2){
+            jLabel10.setVisible(true);
+            jLabel10.setOpaque(true);
+        jLabel10.setBackground(new Color(0, 255, 0, 128)); // Set the alpha value to 128 for slight transparency
+        jLabel10.setForeground(new Color(jLabel9.getForeground().getRed(), jLabel9.getForeground().getGreen(), jLabel9.getForeground().getBlue(), 128)); // Set the alpha value to 128 for slight transparency
+        } if(points > 3){
+            jLabel11.setVisible(true);
+            jLabel11.setOpaque(true);
+        jLabel11.setBackground(new Color(0, 255, 0, 128)); // Set the alpha value to 128 for slight transparency
+        jLabel11.setForeground(new Color(jLabel9.getForeground().getRed(), jLabel9.getForeground().getGreen(), jLabel9.getForeground().getBlue(), 128)); // Set the alpha value to 128 for slight transparency
+        }if(points > 4){
+            jLabel12.setVisible(true);
+            jLabel12.setOpaque(true);
+        jLabel12.setBackground(new Color(0, 255, 0, 128)); // Set the alpha value to 128 for slight transparency
+        jLabel12.setForeground(new Color(jLabel9.getForeground().getRed(), jLabel9.getForeground().getGreen(), jLabel9.getForeground().getBlue(), 128)); // Set the alpha value to 128 for slight transparency
+        } if(points > 5){
+        jLabel13.setVisible(true);
+        jLabel13.setOpaque(true);
+    jLabel13.setBackground(new Color(0, 255, 0, 128)); // Set the alpha value to 128 for slight transparency
+    jLabel13.setForeground(new Color(jLabel9.getForeground().getRed(), jLabel9.getForeground().getGreen(), jLabel9.getForeground().getBlue(), 128)); // Set the alpha value to 128 for slight transparency
+        } if(points > 6){
+    jLabel14.setVisible(true);
+    jLabel14.setOpaque(true);
+    jLabel14.setBackground(new Color(0, 255, 0, 128)); // Set the alpha value to 128 for slight transparency
+    jLabel14.setForeground(new Color(jLabel9.getForeground().getRed(), jLabel9.getForeground().getGreen(), jLabel9.getForeground().getBlue(), 128)); // Set the alpha value to 128 for slight transparency
+    } if(points > 7){
+    jLabel15.setVisible(true);
+    jLabel15.setOpaque(true);
+jLabel15.setBackground(new Color(0, 255, 0, 128)); // Set the alpha value to 128 for slight transparency
+jLabel15.setForeground(new Color(jLabel9.getForeground().getRed(), jLabel9.getForeground().getGreen(), jLabel9.getForeground().getBlue(), 128)); // Set the alpha value to 128 for slight transparency
+} if(points > 8){
+    jLabel16.setVisible(true);
+    jLabel16.setOpaque(true);
+jLabel16.setBackground(new Color(0, 255, 0, 128)); // Set the alpha value to 128 for slight transparency
+jLabel16.setForeground(new Color(jLabel9.getForeground().getRed(), jLabel9.getForeground().getGreen(), jLabel9.getForeground().getBlue(), 128)); // Set the alpha value to 128 for slight transparency
+}if(points > 9){
+    jLabel17.setVisible(true);
+    jLabel17.setOpaque(true);
+jLabel17.setBackground(new Color(0, 255, 0, 128)); // Set the alpha value to 128 for slight transparency
+jLabel17.setForeground(new Color(jLabel9.getForeground().getRed(), jLabel9.getForeground().getGreen(), jLabel9.getForeground().getBlue(), 128)); // Set the alpha value to 128 for slight transparency
+
+        System.out.println(points);
+} if(points > 10){
+    jLabel18.setVisible(true);
+    jLabel18.setOpaque(true);
+jLabel18.setBackground(new Color(0, 255, 0, 128)); // Set the alpha value to 128 for slight transparency
+jLabel18.setForeground(new Color(jLabel9.getForeground().getRed(), jLabel9.getForeground().getGreen(), jLabel9.getForeground().getBlue(), 128)); // Set the alpha value to 128 for slight transparency
+
+
+} if(points == 11){
+    
+    System.out.println("cashing rpize");
+    cashPrize();
+    winner();
+    points = 0;
+        
+    
+    
+   
+}
     }
     
 //    public void Display(){
@@ -131,6 +229,8 @@ public class GUI extends javax.swing.JFrame {
         String saveRNG = RNG.getRandomNumber();
         GameDatabase.Retrieve();
         
+        points++;
+        
         Science.getQuestion(saveRNG);
         answered.add(saveRNG);
         System.out.println(Science.ID);
@@ -150,6 +250,7 @@ public class GUI extends javax.swing.JFrame {
         jTextField4.setText(Science.PA.get("A3"));
         jTextField5.setText(Science.PA.get("A4"));
         
+        checkPoints();
         
         
     }
@@ -157,6 +258,8 @@ public class GUI extends javax.swing.JFrame {
     public void DisplayMaths(){
         String saveRNG = RNG.getRandomNumber();
         GameDatabase.Retrieve();
+        
+        points++;
         
         Maths.getQuestion(saveRNG);
         answered.add(saveRNG);
@@ -177,12 +280,14 @@ public class GUI extends javax.swing.JFrame {
         jTextField4.setText(Maths.PA.get("A3"));
         jTextField5.setText(Maths.PA.get("A4"));
         
-        
+        checkPoints();
     }
     
     public void DisplaySports(){
         String saveRNG = RNG.getRandomNumber();
         GameDatabase.Retrieve();
+        
+        points++;
         
         Sports.getQuestion(saveRNG);
         answered.add(saveRNG);
@@ -203,12 +308,14 @@ public class GUI extends javax.swing.JFrame {
         jTextField4.setText(Sports.PA.get("A3"));
         jTextField5.setText(Sports.PA.get("A4"));
         
-        
+        checkPoints();
     }
     
     public void DisplayGeography(){
         String saveRNG = RNG.getRandomNumber();
         GameDatabase.Retrieve();
+        
+        points++;
         
         Geography.getQuestion(saveRNG);
         answered.add(saveRNG);
@@ -229,12 +336,14 @@ public class GUI extends javax.swing.JFrame {
         jTextField4.setText(Geography.PA.get("A3"));
         jTextField5.setText(Geography.PA.get("A4"));
         
-        
+        checkPoints();
     }
     
     public void DisplayPopCulture(){
         String saveRNG = RNG.getRandomNumber();
         GameDatabase.Retrieve();
+        
+        points++;
         
         PopCulture.getQuestion(saveRNG);
         answered.add(saveRNG);
@@ -255,12 +364,13 @@ public class GUI extends javax.swing.JFrame {
         jTextField4.setText(PopCulture.PA.get("A3"));
         jTextField5.setText(PopCulture.PA.get("A4"));
         
-        
+        checkPoints();
     }
     
     public void DisplayHistory(){
         
         String saveRNG = RNG.getRandomNumber();
+        points++;
         GameDatabase.Retrieve();
         
         History.getQuestion(saveRNG);
@@ -283,10 +393,32 @@ public class GUI extends javax.swing.JFrame {
         jTextField5.setText(History.PA.get("A4"));
         
         
-       
+       checkPoints();
     }
     
-    
+    public void winner(){
+        Container contentPane = dialog4.getContentPane();
+        
+       
+
+        // Set the text directly on the content pane
+        contentPane.add(new JLabel("    CONGRATULATION, "+username.toUpperCase()+" YOU WIN A MILLION DOLLARS \n"));
+        
+       
+        
+
+        // Set the size and location of the dialog
+        dialog4.setSize(400, 200);
+
+        
+        dialog4.setLocationRelativeTo(this);
+
+        // Make the dialog visible
+        dialog4.setVisible(true);
+//        jLabel3.setEnabled(false);
+//        jLabel3.setVisible(false);
+//        jLabel6.setVisible(true);
+    }
 
     public void Reveal(String answer) {
         
@@ -371,6 +503,44 @@ public class GUI extends javax.swing.JFrame {
     
   }
     
+    public void run() {
+                StartScreen playGame = new StartScreen();
+                playGame.setVisible(true);
+                
+    }
+    
+    public void cashPrize(){
+        // Specify the file name
+    String fileName = "cash.txt";
+    
+    // Check if the file exists
+    File file = new File(fileName);
+    if (!file.exists()) {
+        try {
+            // Create the file if it doesn't exist
+            file.createNewFile();
+        } catch (IOException e) {
+            System.err.println("Failed to create the file: " + e.getMessage());
+            return;
+        }
+    } file.delete();
+
+    try (FileWriter writer = new FileWriter(file, true)) {
+        // Append "hello" to the file
+        
+        
+        writer.append("/////////////////////////////////////////////\n");
+        writer.append("/                 YOU WON                   /\n");
+        writer.append("/                $1,000,000                 /\n");
+        writer.append("/                                           /\n");
+        writer.append("/             TO: "+username.toUpperCase()+"                      /\n");
+        writer.append("/////////////////////////////////////////////\n");
+        writer.flush();
+    } catch (IOException e) {
+        System.err.println("Failed to write to the file: " + e.getMessage());
+    }
+    }
+    
     
 
     /**
@@ -385,12 +555,24 @@ public class GUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jButton9 = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
         jLabel5 = new javax.swing.JLabel();
@@ -447,9 +629,27 @@ public class GUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 31, -1, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 674, 250, 40));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 604, 250, 30));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 520, 240, 40));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 444, 240, 30));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 354, 240, 40));
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 284, 250, 30));
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 190, 240, 40));
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 110, 240, 40));
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 34, 270, 30));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 754, 260, 40));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proj2/images/MoneyLevel.jpg"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(738, 11, -1, -1));
+
+        jButton9.setText("Exit Game");
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton9MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 580, -1, -1));
 
         jTextField2.setEditable(false);
         jTextField2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -496,11 +696,22 @@ public class GUI extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 330, -1, -1));
 
+        jButton8.setText("Go to Menu");
+        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton8MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 550, -1, -1));
+
         jTextPane1.setEditable(false);
         jTextPane1.setBackground(new java.awt.Color(102, 102, 102));
         jTextPane1.setBorder(null);
         jTextPane1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextPane1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextPane1.setFocusable(false);
         jTextPane1.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        jTextPane1.setOpaque(false);
         jTextPane1.setSelectedTextColor(new java.awt.Color(102, 102, 102));
         jTextPane1.setVerifyInputWhenFocusTarget(false);
         jScrollPane2.setViewportView(jTextPane1);
@@ -509,7 +720,7 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel5.setText("Choose Category");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(307, 216, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, -1, -1));
 
         jButton2.setText("jButton2");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -517,7 +728,7 @@ public class GUI extends javax.swing.JFrame {
                 jButton2MouseClicked(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 288, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 320, -1, -1));
 
         jButton3.setText("jButton3");
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -525,7 +736,7 @@ public class GUI extends javax.swing.JFrame {
                 jButton3MouseClicked(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(268, 288, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, -1, -1));
 
         jButton4.setText("jButton4");
         jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -533,7 +744,7 @@ public class GUI extends javax.swing.JFrame {
                 jButton4MouseClicked(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, -1, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 370, -1, -1));
 
         jButton5.setText("jButton5");
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -541,7 +752,7 @@ public class GUI extends javax.swing.JFrame {
                 jButton5MouseClicked(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 330, -1, -1));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 370, -1, -1));
 
         jButton6.setText("jButton6");
         jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -549,7 +760,7 @@ public class GUI extends javax.swing.JFrame {
                 jButton6MouseClicked(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 380, -1, -1));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 420, -1, -1));
 
         jButton7.setText("jButton7");
         jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -557,7 +768,7 @@ public class GUI extends javax.swing.JFrame {
                 jButton7MouseClicked(evt);
             }
         });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, -1, -1));
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proj2/images/icon rev-15.png"))); // NOI18N
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, -1, -1));
@@ -890,6 +1101,16 @@ public class GUI extends javax.swing.JFrame {
         }   
     }//GEN-LAST:event_jLabel1MouseClicked
 
+    private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
+        points = 0;
+        run();
+        dispose();
+    }//GEN-LAST:event_jButton8MouseClicked
+
+    private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_jButton9MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -902,7 +1123,18 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -910,6 +1142,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;

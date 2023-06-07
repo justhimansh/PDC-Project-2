@@ -18,7 +18,7 @@ public class RNG {
     public static String getRandomNumber(){
         if (isIterated) {
             // All questions have been iterated, stop here
-            System.out.println("hellooo");
+//            System.out.println("hellooo");
             return null;
         }
 
@@ -30,6 +30,7 @@ public class RNG {
 
         String randomItem = questionIDList[randomIndex];
         questionIDList[randomIndex] = null;
+        //GUI.points++;
 
         System.out.println("rng is " + randomItem);
 
