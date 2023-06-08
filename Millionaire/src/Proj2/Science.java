@@ -121,4 +121,10 @@ public class Science {
             return answer;
         }
     }
+    
+    public static String testQuestion(){
+        String result = "What is the PH of H2O?";
+        
+        return result;
+    }
 }

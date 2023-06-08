@@ -120,4 +120,10 @@ public class Sports {
             return answer;
         }
     }
+    
+    public static String testQuestion(){
+        String result = "In which sport do athletes compete for the Davis Cup?";
+        
+        return result;
+    }
 }

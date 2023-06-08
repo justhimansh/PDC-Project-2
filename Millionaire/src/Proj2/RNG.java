@@ -12,7 +12,7 @@ import java.util.Random;
  * @author Owner
  */
 public class RNG {
-    private static String[] questionIDList = {"q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10"};
+    public static String[] questionIDList = {"q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10"};
     private static boolean isIterated = false;
 
     public static String getRandomNumber(){
@@ -44,5 +44,9 @@ public class RNG {
         }
 
         return randomItem;
+    }
+    
+    public static String forTest(){
+        return questionIDList[1];
     }
 }

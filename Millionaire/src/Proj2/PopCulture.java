@@ -120,4 +120,10 @@ public class PopCulture {
             return answer;
         }
     }
+    
+    public static String testQuestion(){
+        String result = "What is the highest-grossing film of all time (as of 2021)?";
+        
+        return result;
+    }
 }

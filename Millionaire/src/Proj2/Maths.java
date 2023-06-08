@@ -68,7 +68,7 @@ public class Maths {
         return actualAnswer;
     }
     
-    private static Map<String, Question> parseQuestions(String inputString) {
+    public static Map<String, Question> parseQuestions(String inputString) {
         Map<String, Question> questionStore = new HashMap<>();
         String[] questionData = inputString.split("\\n\\n");
 
@@ -122,5 +122,10 @@ public class Maths {
         public String getAnswer() {
             return answer;
         }
+    }
+    
+    public static String testQuestion(){
+        String test = "How Many Months Make a Century?";
+        return test;
     }
 }

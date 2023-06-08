@@ -120,4 +120,8 @@ public class Geography {
             return answer;
         }
     }
+    
+    public static String testQuestion(){
+        return "What is the largest river in the world?";
+    }
 }

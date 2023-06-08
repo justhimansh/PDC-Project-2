@@ -120,4 +120,9 @@ public class History {
             return answer;
         }
     }
+    
+    public static String testQuestion(){
+        String result = "In which year did World War I begin";
+        return result;
+    }
 }
